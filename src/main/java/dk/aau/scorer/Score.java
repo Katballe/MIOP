@@ -66,14 +66,16 @@ public class Score {
         if (gcs == 15) {
             sofaScore = sofaScore + 0;
             sofaPointList[0] = 0;
-        } else if (gcs <= 13 && gcs >= 14) {
+        } else if (gcs == 13 || gcs == 14) {
             sofaPointList[0] = 1;
+            System.out.println("Givet value: " + sofaPointList[0]);
         } else if (10 <= gcs && 12 >= gcs) {
             sofaPointList[0] = 2;
             
         } else if (6 <= gcs && 9 >= gcs) {
             sofaPointList[0] = 3;
         } else if (gcs == 0) {
+            System.out.println("Givet value: " + sofaPointList[0]);
             DataMissing = true;
             sofaPointList[0] = 0;
         } else {
@@ -95,7 +97,7 @@ public class Score {
             sofaPointList[3] = 0;
             
         } else {
-            sofaPointList[3] = 4;
+                        sofaPointList[3] = 4;
         }
         // kreatinin
         if (kreatinin < 110) {
@@ -133,15 +135,15 @@ public class Score {
         // pao2
         if (pao2 >= 10.7) {
             sofaScore = sofaScore + 0;
-            sofaPointList[0] = 0;
+            sofaPointList[2] = 0;
         } else if (pao2 <= 10.7 && pao2 >= 8.1) {
-            sofaPointList[0] = 1;
+            sofaPointList[2] = 1;
             
         } else if (pao2 == 0) {
             DataMissing = true;
-            sofaPointList[0] = 0;
+            sofaPointList[2] = 0;
         } else {
-            sofaPointList[0] = 2;
+            sofaPointList[2] = 2;
         }
         // systoliskBlodtryk
         if (systoliskBlodtryk > 100) {
@@ -158,6 +160,7 @@ public class Score {
     private int calculateSofaScore() {
         for (int i = 0; i <= sofaPointList.length - 1; i++) {
             sofaScore += sofaPointList[i];
+            System.out.println("Calc " + sofaPointList[i]);
         }
         return sofaScore;
     }
@@ -303,18 +306,18 @@ public class Score {
             System.out.println("No");
         }
         System.out.println("");
-        System.out.println(" Biomarker               Ref.     Value");
-        System.out.println("- Temperature:          36-37.9  "+ ResultBiomarker.biomarkerList[10] + "   Timestamp: " + ResultBiomarker.temperaturTime);
-        System.out.println("- Saturation:           96+      "+ (int)ResultBiomarker.biomarkerList[8] + "     Timestamp: " + ResultBiomarker.saturationTime);
-        System.out.println("- Pulse:                50-89    "+ (int)ResultBiomarker.biomarkerList[9] + "     Timestamp: " + ResultBiomarker.pulseTime);
-        System.out.println("- Systolisc BP:         < 100    "+ (int)ResultBiomarker.biomarkerList[1] + "    Timestamp: " + ResultBiomarker.sysbpTime);
-        System.out.println("- Respiratory Rate:     12-20    "+ (int)ResultBiomarker.biomarkerList[7] + "     Timestamp: " + ResultBiomarker.respfrekTime);
-        System.out.println("- GCS:                  15       "+ (int)ResultBiomarker.biomarkerList[5] + "     Timestamp: " + ResultBiomarker.gcsTime);
-        System.out.println("- PaO2:                 > 10.7   "+ ResultBiomarker.biomarkerList[0] + "   Timestamp: " + ResultBiomarker.pao2Time);
-        System.out.println("- Bilirubin:            < 20     "+ (int)ResultBiomarker.biomarkerList[2] + "      Timestamp: " + ResultBiomarker.bilirubinTime);
-        System.out.println("- Creatine:             < 110    "+ (int)ResultBiomarker.biomarkerList[3] + "    Timestamp: " + ResultBiomarker.kreatininTime);
-        System.out.println("- Platelets:            > 150    "+ (int)ResultBiomarker.biomarkerList[4] + "    Timestamp: " + ResultBiomarker.plateletsTime);
-        System.out.println("- Lactate:              < 2      "+ ResultBiomarker.biomarkerList[6] + "    Timestamp: " + ResultBiomarker.lactateTime);
+        System.out.println(" Biomarker               Ref.      Result");
+        System.out.println("- Temperature:            36-37.9 "+ ResultBiomarker.biomarkerList[10] + "   Timestamp: " + ResultBiomarker.temperaturTime);
+        System.out.println("- Saturation:             96+     "+ (int)ResultBiomarker.biomarkerList[8] + "     Timestamp: " + ResultBiomarker.saturationTime);
+        System.out.println("- Pulse:                  50-89   "+ (int)ResultBiomarker.biomarkerList[9] + "     Timestamp: " + ResultBiomarker.pulseTime);
+        System.out.println("- Systolisc BP:         < 100     "+ (int)ResultBiomarker.biomarkerList[1] + "    Timestamp: " + ResultBiomarker.sysbpTime);
+        System.out.println("- Respiratory Rate:       12-20   "+ (int)ResultBiomarker.biomarkerList[7] + "     Timestamp: " + ResultBiomarker.respfrekTime);
+        System.out.println("- GCS:                    15      "+ (int)ResultBiomarker.biomarkerList[5] + "     Timestamp: " + ResultBiomarker.gcsTime);
+        System.out.println("- PaO2:                 > 10.7    "+ ResultBiomarker.biomarkerList[0] + "   Timestamp: " + ResultBiomarker.pao2Time);
+        System.out.println("- Bilirubin:            < 20      "+ (int)ResultBiomarker.biomarkerList[2] + "      Timestamp: " + ResultBiomarker.bilirubinTime);
+        System.out.println("- Creatinine:           < 110     "+ (int)ResultBiomarker.biomarkerList[3] + "    Timestamp: " + ResultBiomarker.kreatininTime);
+        System.out.println("- Platelets:            > 150     "+ (int)ResultBiomarker.biomarkerList[4] + "    Timestamp: " + ResultBiomarker.plateletsTime);
+        System.out.println("- Lactate:              < 2       "+ ResultBiomarker.biomarkerList[6] + "    Timestamp: " + ResultBiomarker.lactateTime);
         
         System.out.println("");
         System.out.println("Data missing: " + DataMissing);

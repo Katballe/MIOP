@@ -78,7 +78,7 @@ public class Patient extends Person {   // gør patinet til subklasse til Person
                 ResultBiomarker b = new ResultBiomarker();        // Hvis petienten HAR et fornavn oprettes en instans af ResultBiomarker og Score 
                 Score Score = new Score(); 
             }
-        }
+       } 
     }
     
     public static long getCprNummer(){                              // Getter der anvedes til at hente data i alle handlers

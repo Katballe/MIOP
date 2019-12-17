@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 
 public class App extends Application {
     // tidshåndterings variabler 
-    public static long days = (long) 5; // antallet af dage der kigged bagud
+    public static long days = (long) 2; // antallet af dage der kigged bagud
     public static String currentDate;
     public static String previousDate;
     

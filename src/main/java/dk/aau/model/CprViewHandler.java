@@ -36,7 +36,6 @@ public class CprViewHandler {
             alert.setHeaderText("CPR-nummeret skal være 10 tal.");
             alert.setContentText("SPR-nummeret skal have formatet 10 tal.\nIngen bogstaver, tegn eller mellemrum. ");
             alert.showAndWait();
-        }
-        
+        }   
     }
 }
