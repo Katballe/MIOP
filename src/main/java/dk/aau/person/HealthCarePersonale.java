@@ -10,7 +10,7 @@ public class HealthCarePersonale extends Person{
     }
 
     // metode til at skifte patient
-    public void cahngePatient(){
+    private void changePatient(){
         // opretter ny instans af tempPatinet som overskriver den gamle
         Patient p = new Patient();
     }

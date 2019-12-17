@@ -7,8 +7,8 @@ import dk.aau.person.Patient;
 public class Score {
 
     // Variabler 
-    public static int toksScore;
-    public static int sofaScore;
+    private static int toksScore;
+    private static int sofaScore;
     private static int sofaPointList[];
     private static int toksPointList[];
     private static Boolean septicShockScore;
@@ -32,14 +32,15 @@ public class Score {
         giveToksPoint(ResultBiomarker.biomarkerList[5], ResultBiomarker.biomarkerList[10],
         ResultBiomarker.biomarkerList[8], ResultBiomarker.biomarkerList[9],
         ResultBiomarker.biomarkerList[1], ResultBiomarker.biomarkerList[7]);
+
         calculateToksScore();
-        
-        calculateSepticShockScore(ResultBiomarker.biomarkerList[6], ResultBiomarker.biomarkerList[1]);
-        
         giveSofaPoint(ResultBiomarker.biomarkerList[3], ResultBiomarker.biomarkerList[2],
         ResultBiomarker.biomarkerList[4], ResultBiomarker.biomarkerList[0],
         ResultBiomarker.biomarkerList[1], ResultBiomarker.biomarkerList[5]);
         calculateSofaScore();
+        calculateSepticShockScore(ResultBiomarker.biomarkerList[6], ResultBiomarker.biomarkerList[1]);
+        
+
         // temp  metoder til at vise ting
         Patient.showHealthCareData();
         visDataTemp();
@@ -161,7 +162,7 @@ public class Score {
         return sofaScore;
     }
     
-    public void giveToksPoint(double gcs, double temperatur, double sauration, double puls, double sys,
+    private void giveToksPoint(double gcs, double temperatur, double sauration, double puls, double sys,
     double respFrek) {
         {
             // respFrek
@@ -256,6 +257,26 @@ public class Score {
         return toksScore;
     }
     
+    public void showToksScore(){
+
+    }
+
+    public void showToksPoint(){
+
+    }
+
+    public void showSofaScore(){
+
+    }
+
+    public void showSofaPoint(){
+
+    }   
+    public void showSepticShock(){
+
+    }
+
+
     public static void visDataTemp() {
         System.out.println("");
         System.out.println("");
