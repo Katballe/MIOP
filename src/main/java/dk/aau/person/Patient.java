@@ -14,6 +14,9 @@ public class Patient extends Person {   // gør patinet til subklasse til Person
     private static String gender;
     private static int age;
     private Stage dialogStage;
+    public int currentYear;
+    public int currentMonth;
+    public int currentDay;
     
     // constructor for tempPatient. Bliver CPR-nummeret ikke verificeret, bliver den "rigtige" patient instans aldrig oprettet
     // hvis CPR nummeret bliver verificeret, bliver den "rigtige" patinet construktor kaldt, og en instans af den bliver oprettet
@@ -41,6 +44,8 @@ public class Patient extends Person {   // gør patinet til subklasse til Person
         
         firstName = FirstName;
         lastName = LastName;
+        calcAge();
+        calcGender();
         
     }
     
@@ -78,7 +83,7 @@ public class Patient extends Person {   // gør patinet til subklasse til Person
                 ResultBiomarker b = new ResultBiomarker();        // Hvis petienten HAR et fornavn oprettes en instans af ResultBiomarker og Score 
                 Score Score = new Score(); 
             }
-       } 
+        } 
     }
     
     public static long getCprNummer(){                              // Getter der anvedes til at hente data i alle handlers
@@ -101,4 +106,67 @@ public class Patient extends Person {   // gør patinet til subklasse til Person
         System.out.println("Age:         " + age);
     }
     
+    // Under construction! But this concept should work
+    private void calcAge(){
+        //    App.dateForAge
+        System.out.println(App.dateForAge);
+        String ageVar = String.valueOf(cpr);      
+        char yearOneVar = App.dateForAge.charAt(0);
+        char yearTwoVar = App.dateForAge.charAt(1);
+        char monthOneVar = App.dateForAge.charAt(2);
+        char monthTwoVar = App.dateForAge.charAt(3);
+        char dayOneVar = App.dateForAge.charAt(4);
+        char dayTwoVar = App.dateForAge.charAt(5);
+        String dayVar = Character.toString(dayOneVar) + Character.toString(dayTwoVar);
+        String monthVar = Character.toString(monthOneVar) + Character.toString(monthTwoVar);
+        String yearVar = Character.toString(yearOneVar) + Character.toString(yearTwoVar);
+        currentDay = Integer.parseInt(dayVar);
+        currentMonth = Integer.parseInt(monthVar);
+        currentYear = Integer.parseInt(yearVar);
+
+        //int dateForAge = Integer.parseInt(currentYear);
+        //int monthForAge = Integer.parseInt(currentMonth);
+        //int dayForAge = Integer.parseInt(currentDay);
+        
+        
+        char yearOne = ageVar.charAt(4);
+        char yearTwo = ageVar.charAt(5);
+        String yearString = Character.toString(yearOne) + Character.toString(yearTwo);
+        int year = Integer.parseInt(yearString);
+        
+        char monthOne = ageVar.charAt(2);
+        char monthTwo = ageVar.charAt(3); 
+        String monthString = Character.toString(monthOne) + Character.toString(monthTwo);
+        int month = Integer.parseInt(monthString);
+        
+        char dayOne = ageVar.charAt(0);
+        char dayTwo = ageVar.charAt(1); 
+        String dayString = Character.toString(dayOne) + Character.toString(dayTwo);
+        int day = Integer.parseInt(dayString);
+        
+        int offset;
+        if (currentYear >= year){
+            offset = 0;
+        } else {
+            offset = 100;
+        }
+        age = currentYear +offset - year;
+        if(month >= currentMonth && day >= currentYear){
+            age +=1;
+        }
+
+        System.out.println("Age: " + age);
+        System.out.println("Days compared: " + currentDay + " - " + day);
+        System.out.println("Months:        " + currentMonth + " - " + month);
+        System.out.println("Years:         " + currentYear + " - " + year);
+
+    }
+    
+    private void calcGender(){
+        if (cpr % 2 == 0){
+            gender = "Female";
+        } else {
+            gender = "Male";
+        }
+    }
 }

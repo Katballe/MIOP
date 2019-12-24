@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.mvc.SplashView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<SplitPane dividerPositions="0.05" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="735.0" prefWidth="935.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <items>
+      <Label text="MIOP">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="22.0" />
+         </font>
+      </Label>
+      <SplitPane prefHeight="331.0" prefWidth="562.0">
+         <items>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="686.0" prefWidth="944.0">
+               <children>
+                  <TextArea layoutX="14.0" layoutY="76.0" prefHeight="258.0" prefWidth="458.0" />
+                  <Button layoutX="35.0" layoutY="290.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="127.0" text="Afslut" />
+                  <TextArea layoutX="14.0" layoutY="345.0" prefHeight="342.0" prefWidth="458.0" text="&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;" />
+                  <TextArea layoutX="481.0" layoutY="3.0" prefHeight="331.0" prefWidth="444.0" />
+                  <Button layoutX="351.0" layoutY="293.0" mnemonicParsing="false" text="Skift patient" />
+                  <TextField layoutX="658.0" layoutY="238.0" prefHeight="27.0" prefWidth="52.0" visible="false" />
+                  <Text layoutX="26.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patientinformation">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="490.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SOFA">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="25.0" layoutY="370.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TOKS 2.0">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <GridPane focusTraversable="true" gridLinesVisible="true" layoutX="216.0" layoutY="377.0" prefHeight="242.0" prefWidth="207.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="75.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="80.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="70.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="55.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="67.0" minHeight="2.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="83.0" minHeight="0.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="87.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="89.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="91.0" minHeight="0.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="65.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Rectangle arcHeight="5.0" arcWidth="2.0" fill="#f80000" height="36.0" stroke="BLACK" strokeType="INSIDE" width="210.0" GridPane.rowIndex="1" />
+                        <Label prefHeight="32.0" prefWidth="57.0" text=" Normal-&#10; område" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label text=" 120" GridPane.rowIndex="2" />
+                        <Label text=" 110-219" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label text=" 15" GridPane.rowIndex="4" />
+                        <Label prefHeight="29.0" prefWidth="26.0" text=" 15" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label text=" 10" textFill="#ee0606" GridPane.rowIndex="5" />
+                        <Label text=" 12-20" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+                           <children>
+                              <Label layoutX="1.0" layoutY="8.0" prefHeight="11.0" prefWidth="49.0" text=" Enhed">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <Label text=" mmHg" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <Label text=" Point" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                        <Label text=" Pr. min" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                        <Label text=" Point&#10; (0-5)" GridPane.columnIndex="3">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label text=" 0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                        <Label text=" 0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                        <Label text=" 1" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                        <Label text=" 33" textFill="#ee0303" GridPane.rowIndex="6" />
+                        <Label text=" 35-35.9,&#10; 38-38.9&#10;" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <Label text=" C°" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                        <Label text=" 3" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                        <Label prefHeight="16.0" prefWidth="57.0" text=" Resultat">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label text="        -" GridPane.rowIndex="1" />
+                        <Label text=" bpm" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                        <Label text=" 40-49,&#10; 90-109" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label text=" 0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        <Label text=" 70" GridPane.rowIndex="3" />
+                        <Label text=" 0" textFill="#222020" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                        <Label text=" %" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Label text=" ≥96" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                     </children>
+                  </GridPane>
+                  <Label layoutX="25.0" layoutY="431.0" text="Saturation" />
+                  <Label layoutX="25.0" layoutY="500.0" text="Puls" />
+                  <Label layoutX="25.0" layoutY="461.0" text="Systolisk blodtryk" />
+                  <Label layoutX="25.0" layoutY="560.0" text="Respirationsfrekvens" />
+                  <Label layoutX="25.0" layoutY="527.0" text="GCS" />
+                  <Label layoutX="25.0" layoutY="590.0" text="Temperatur" />
+                  <Label layoutX="25.0" layoutY="640.0" text="Samlet TOKS score (0-23):" />
+                  <Label layoutX="490.0" layoutY="63.0" text="Bilirubin" />
+                  <Label layoutX="490.0" layoutY="87.0" text="Kreatinin" />
+                  <Label layoutX="490.0" layoutY="115.0" text="PaO2" />
+                  <Label layoutX="490.0" layoutY="145.0" prefHeight="17.0" prefWidth="113.0" text="Systolisk blodtryk" />
+                  <Label layoutX="490.0" layoutY="173.0" text="Trombocyttal" />
+                  <Label layoutX="490.0" layoutY="203.0" text="GCS" />
+                  <GridPane focusTraversable="true" gridLinesVisible="true" layoutX="662.0" layoutY="28.0" prefHeight="199.0" prefWidth="221.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="75.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="70.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="80.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="55.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="46.0" minHeight="0.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="67.0" minHeight="2.0" prefHeight="24.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="83.0" minHeight="0.0" prefHeight="24.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="87.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="89.0" minHeight="10.0" prefHeight="24.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="89.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label GridPane.rowIndex="1" />
+                        <Label text=" 402" textFill="#f20303" GridPane.rowIndex="2" />
+                        <Label prefHeight="32.0" prefWidth="57.0" text=" Normal-&#10; område" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label text=" &lt;20" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label text=" &lt;110" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label text=" 12" GridPane.rowIndex="3" />
+                        <Label text=" ≥ 10.7" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label text=" 120" textFill="#1b1a1a" GridPane.rowIndex="4" />
+                        <Label text=" &gt;100" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label text="150" GridPane.rowIndex="5" />
+                        <Label prefHeight="27.0" prefWidth="48.0" text=" ≥ 150" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+                           <children>
+                              <Label layoutX="1.0" layoutY="3.0" prefHeight="21.0" prefWidth="49.0" text=" Enhed">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <Label prefHeight="17.0" prefWidth="51.0" text=" μmol/L" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Label text=" μmol/L" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <Label text=" kPa" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                        <Label text=" mmHg" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                        <Label text=" x*10^3/μL" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                        <Label text=" Point&#10; (0-4)" GridPane.columnIndex="3">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label text=" 3" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        <Label text=" 4" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                        <Label text=" 0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                        <Label text=" 2" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                        <Label text=" 0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                        <Label text=" 200" textFill="#e80b0b" GridPane.rowIndex="1" />
+                        <Label prefHeight="16.0" prefWidth="70.0" text=" Resultat">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label text="14" textFill="#ee0303" GridPane.rowIndex="6" />
+                        <Label text=" 15" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <Label text=" Point" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                        <Label text=" 1" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                     </children>
+                  </GridPane>
+                  <Label layoutX="490.0" layoutY="274.0" text="Samlet SOFA score (0-24):" />
+                  <Label layoutX="520.0" layoutY="431.0" text="Laktat" />
+                  <Label layoutX="40.0" layoutY="114.0" text="CPR-nummer:" />
+                  <Label layoutX="47.0" layoutY="154.0" text="Navn:" />
+                  <Label layoutX="45.0" layoutY="243.0" text="Køn:" />
+                  <Label layoutX="46.0" layoutY="196.0" text="Alder:" />
+                  <Label layoutX="26.0" layoutY="45.0" text="Sundhedspersonale ID:" />
+                  <TextField layoutX="216.0" layoutY="635.0" prefHeight="27.0" prefWidth="54.0" text="7" />
+                  <TextField layoutX="695.0" layoutY="267.0" prefHeight="27.0" prefWidth="54.0" text="10" />
+                  <TextField layoutX="336.0" layoutY="109.0" prefHeight="27.0" prefWidth="107.0" text="1210562223" />
+                  <TextField layoutX="306.0" layoutY="149.0" prefHeight="27.0" prefWidth="137.0" text="Hans Kristensen" />
+                  <TextField layoutX="337.0" layoutY="191.0" prefHeight="27.0" prefWidth="107.0" text="63" />
+                  <TextField layoutX="337.0" layoutY="238.0" prefHeight="27.0" prefWidth="107.0" text="Mand" />
+                  <TextArea layoutX="482.0" layoutY="348.0" prefHeight="339.0" prefWidth="442.0" />
+                  <GridPane focusTraversable="true" gridLinesVisible="true" layoutX="672.0" layoutY="411.0" prefHeight="156.0" prefWidth="207.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="70.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="70.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="80.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="46.0" minHeight="0.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="67.0" minHeight="2.0" prefHeight="24.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label GridPane.rowIndex="1" />
+                        <Label text=" 120" textFill="#141414" GridPane.rowIndex="2" />
+                        <Label prefHeight="36.0" prefWidth="62.0" text=" Normal-&#10; område" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label text=" &lt;2" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label text=" &gt;90" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+                           <children>
+                              <Label layoutX="1.0" layoutY="12.0" prefHeight="20.0" prefWidth="49.0" text=" Enhed">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <Label prefHeight="17.0" prefWidth="51.0" text=" mmol/L" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Label text=" mmHg" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <Label text=" 3" textFill="#e80b0b" GridPane.rowIndex="1" />
+                        <Label prefHeight="16.0" prefWidth="60.0" text=" Resultat">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </GridPane>
+                  <Label layoutX="490.0" layoutY="461.0" text="Laktat" />
+                  <Label layoutX="490.0" layoutY="527.0" text="Systolisk blodtryk" />
+                  <Text layoutX="500.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Septisk chok">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Label layoutX="490.0" layoutY="640.0" text="Septisk chok (Ja/Nej):" />
+                  <TextField layoutX="683.0" layoutY="635.0" prefHeight="27.0" prefWidth="54.0" text="Nej" />
+                  <SplashView layoutX="215.0" layoutY="267.0" />
+                  <Label layoutX="398.0" layoutY="45.0" text="ID" />
+                  <Label layoutX="26.0" layoutY="20.0" text="Sundhedspersonale ID:" />
+                  <Label layoutX="409.0" layoutY="20.0" />
+                  <Label layoutX="390.0" layoutY="20.0" text="Navn" />
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+   </items>
+</SplitPane>

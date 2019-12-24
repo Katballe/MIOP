@@ -15,9 +15,10 @@ import javafx.stage.Stage;
 
 public class App extends Application {
     // tidshåndterings variabler 
-    public static long days = (long) 2; // antallet af dage der kigged bagud
+    public static long days = (long) 7; // antallet af dage der kigged bagud
     public static String currentDate;
     public static String previousDate;
+    public static String dateForAge;
     
     // brugerinterface variabler
     private static Stage primaryStage;
@@ -33,7 +34,9 @@ public class App extends Application {
         // sætter tiden 
         LocalDateTime myDateObj = LocalDateTime.now();
         DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"); 
+        DateTimeFormatter formatForAge = DateTimeFormatter.ofPattern("yyMMdd");
         currentDate = myDateObj.format(myFormatObj);
+        dateForAge = myDateObj.format(formatForAge);
         LocalDateTime a = myDateObj.minus(days, ChronoUnit.DAYS);
         previousDate = a.format(myFormatObj);
 
@@ -78,6 +81,8 @@ public class App extends Application {
         }
     }
     
+    
+
     public Stage getPrimaryStage() {
         return primaryStage;
     }

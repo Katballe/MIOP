@@ -50,7 +50,7 @@ public class Score {
     }
     
     private boolean calculateSepticShockScore(double laktat, double systoliskBlodtryk) {
-        if (laktat >= 2 && systoliskBlodtryk >= 90) {
+        if (laktat >= 2 && systoliskBlodtryk <= 90 && systoliskBlodtryk != 0) {
             septicShockScore = true;
             
         } else {
@@ -186,10 +186,11 @@ public class Score {
             // saturation
             if (sauration >= 96) {
                 toksPointList[3] = 0;
-            } else if (sauration >= 94 && 95 >= sauration) {
+            } else if (sauration == 94 || 95 == sauration) {
                 toksPointList[3] = 1;
-            } else if (sauration >= 92 && 93 >= sauration) {
+            } else if (sauration == 92 || 93 == sauration) {
                 toksPointList[3] = 2;
+                System.out.println("HER!!! " + toksPointList[3]);
             } else if (sauration == 0) {
                 DataMissing = true;
                 toksPointList[3] = 0;
@@ -238,17 +239,17 @@ public class Score {
             
             // puls
             if (50 <= puls && 89 >= puls) {
-                toksPointList[3] = 0;
+                toksPointList[2] = 0;
             } else if (40 <= puls && 49 >= puls || 90 <= puls && 109 >= puls) {
-                toksPointList[3] = 1;
+                toksPointList[2] = 1;
             } else if (110 <= puls && 129 >= puls) {
-                toksPointList[3] = 2;
+                toksPointList[2] = 2;
             } else if (puls == 0) {
                 DataMissing = true;
-                toksPointList[3] = 0;
+                toksPointList[2] = 0;
                 
             } else {
-                toksPointList[3] = 3;
+                toksPointList[2] = 3;
             }
         }
     }
