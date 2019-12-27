@@ -1,4 +1,5 @@
 package dk.aau.person;
+
 import dk.aau.App;
 import dk.aau.biomark.ResultBiomarker;
 import dk.aau.database.DatabaseManipulator;
@@ -13,16 +14,17 @@ public class Patient extends Person {   // gør patinet til subklasse til Person
     private static long cpr;
     private static String gender;
     private static int age;
-    private Stage dialogStage;
+    public static Stage dialogStage;
     public int currentYear;
     public int currentMonth;
     public int currentDay;
+
     
     // constructor for tempPatient. Bliver CPR-nummeret ikke verificeret, bliver den "rigtige" patient instans aldrig oprettet
     // hvis CPR nummeret bliver verificeret, bliver den "rigtige" patinet construktor kaldt, og en instans af den bliver oprettet
     // inkapsulering
     public Patient(){
-        
+        // evt. nulstil her
         //    Scanner myInput= new Scanner(System.in);
         //    System.out.println("Indtast CPR-nummer:");
         //    long CPRnummerHent = myInput.nextLong();
@@ -46,6 +48,7 @@ public class Patient extends Person {   // gør patinet til subklasse til Person
         lastName = LastName;
         calcAge();
         calcGender();
+        
         
     }
     
@@ -72,16 +75,25 @@ public class Patient extends Person {   // gør patinet til subklasse til Person
                 
                 alert.showAndWait();             
             } else {                                            // succes                                
+                
+                // INSERT HERE
+                
+                /*
                 Alert alert = new Alert(AlertType.CONFIRMATION);
                 alert.initOwner(dialogStage);
                 alert.setTitle("Succes");
                 alert.setHeaderText("CPR-nummeret blev succesfuldt verificerert");
                 alert.setContentText("--- Resultatsiden er under konstruktion --- \nResultaterne kan ses i terminalen.");
                 alert.show();
-                App.closeWindow();
+                */
+                //App.closeWindow();
                 
                 ResultBiomarker b = new ResultBiomarker();        // Hvis petienten HAR et fornavn oprettes en instans af ResultBiomarker og Score 
                 Score Score = new Score(); 
+
+                
+                App.changeStageToInfo();
+                
             }
         } 
     }
@@ -89,6 +101,7 @@ public class Patient extends Person {   // gør patinet til subklasse til Person
     public static long getCprNummer(){                              // Getter der anvedes til at hente data i alle handlers
         return cpr;                                                 // alle kan hente den, men de kan ikke ændre attributten cpr
     }
+
     
     private void getHealthCaredata(long CPRnummerHent){              // Opretter PersonHandler og henter sundhedsdata
         PersonHandler ph = new PersonHandler();             
@@ -123,7 +136,7 @@ public class Patient extends Person {   // gør patinet til subklasse til Person
         currentDay = Integer.parseInt(dayVar);
         currentMonth = Integer.parseInt(monthVar);
         currentYear = Integer.parseInt(yearVar);
-
+        
         //int dateForAge = Integer.parseInt(currentYear);
         //int monthForAge = Integer.parseInt(currentMonth);
         //int dayForAge = Integer.parseInt(currentDay);
@@ -154,19 +167,34 @@ public class Patient extends Person {   // gør patinet til subklasse til Person
         if(month >= currentMonth && day >= currentYear){
             age +=1;
         }
-
+        
         System.out.println("Age: " + age);
         System.out.println("Days compared: " + currentDay + " - " + day);
         System.out.println("Months:        " + currentMonth + " - " + month);
         System.out.println("Years:         " + currentYear + " - " + year);
-
+        
     }
     
     private void calcGender(){
         if (cpr % 2 == 0){
-            gender = "Female";
+            gender = "Kvinde";
         } else {
-            gender = "Male";
+            gender = "Mand";
         }
     }
+
+    public static String getName(){
+        String name = firstName + " " + lastName;
+        return name;
+    }
+    public static String getGender(){
+        return gender;
+    }
+    public static int getAge(){
+        return age;
+    }
+    public static void setName(String n) {
+        firstName = n;
+    }
+    
 }

@@ -48,6 +48,7 @@ public class ResultBiomarker {
     // Constructor for tempResultatbiomarkør. Henter data og kalder den "rigtige" biomarkør constructor
     public ResultBiomarker(){
         getBiomarkerDB();
+        biomarkerList = new double[11];        // Opretter biomarkør listen
         
     }
     

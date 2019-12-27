@@ -6,9 +6,12 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 
+
 import javafx.application.Application;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.SplitPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
@@ -22,7 +25,7 @@ public class App extends Application {
     
     // brugerinterface variabler
     private static Stage primaryStage;
-    private BorderPane rootLayout;
+    public static BorderPane rootLayout;
 
     
     @Override                           // programmet skal gøre med kommandoen gradle run, og kræver at gradle er downloadet
@@ -42,6 +45,7 @@ public class App extends Application {
 
         // sætter brugerinterfacet op på scenen
         initRootLayout();
+        //showInfoPage();
         showCprOverview();
     }
 
@@ -61,27 +65,51 @@ public class App extends Application {
             e.printStackTrace();
         }
     }
-    
+
     // lukker vinduet
     public static void closeWindow() {
         primaryStage.close();
     }
+
+    public static void changeStageToCpr(){
+        showCprOverview();
+    }
+
+    public static void changeStageToInfo(){
+        showInfoPage();
+    }
+
     // viser cpr brugergrænseflade siden
-    public void showCprOverview() {
+    public static void showCprOverview() {
         try {
             // Load person overview.
+
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(App.class.getResource("/view/cprOverview.fxml"));
             AnchorPane cprOverview = (AnchorPane) loader.load();
-            
+
             // Set person overview into the center of root layout.
             rootLayout.setCenter(cprOverview);
+            // closeWindow();
+
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-    
-    
+
+    public static void showInfoPage() {
+        try {
+            // Load person overview.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(App.class.getResource("/view/infoPage.fxml"));
+            AnchorPane infoPage = (AnchorPane) loader.load();
+            
+            // Set person overview into the center of root layout.
+            rootLayout.setCenter(infoPage);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }    
 
     public Stage getPrimaryStage() {
         return primaryStage;

@@ -10,9 +10,14 @@ public class HealthCarePersonale extends Person{
     }
 
     // metode til at skifte patient
-    private void changePatient(){
+    private static void changePatient(){
         // opretter ny instans af tempPatinet som overskriver den gamle
-        Patient p = new Patient();
+        Patient p = new Patient(); // det her kan udskiftes med en nulstil funktion for at forsikre at der altid kun er en patient.
+        Patient.setCprNumber((Long) null);
+    }
+
+    public static void changePatientButton(){
+        changePatient();
     }
 
     public void showHealthCarePersonaledata(){  // skal bruges til det endelige user interface

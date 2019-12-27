@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.aau.model.CprViewHandler">
+<AnchorPane maxHeight="400.0" maxWidth="600.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.aau.model.CprViewHandler">
    <children>
       <TextField fx:id="writeCPR" accessibleRole="PASSWORD_FIELD" alignment="CENTER" layoutX="219.0" layoutY="173.0" prefHeight="26.0" prefWidth="171.0" promptText="Skriv CPR-nummer her" />
       <Button layoutX="445.0" layoutY="311.0" mnemonicParsing="false" onAction="#getInformation" text="Hent Information" />

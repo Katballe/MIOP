@@ -19,13 +19,21 @@ public class Score {
         // opretter to lister som biomarkørerne skal puttes i
         sofaPointList = new int[6];
         /*
-        * 0 - gcs 1 - systolisk blodtryk 2 - pao2 3 - bilirubin 4 - kreatinin 5 -
-        * trombocyttal
+        0 - gcs 
+        1 - systolisk blodtryk 
+        2 - pao2 
+        3 - bilirubin 
+        4 - kreatinin 
+        5 - trombocyttal
         */
         toksPointList = new int[6];
         /*
-        * 0 - gcs 1 - systolisk blodtrk 2 - puls 3 - saturation 4 - temperatur 5 -
-        * respirations frekvens
+        0 - gcs 
+        1 - systolisk blodtrk 
+        2 - puls 
+        3 - saturation 
+        4 - temperatur 
+        5 - respirations frekvens
         */
         
         // udregner scorerne
@@ -323,5 +331,21 @@ public class Score {
         System.out.println("");
         System.out.println("Data missing: " + DataMissing);
         System.out.println("");
+    }
+
+    public static int getToksScore() {
+        return toksScore;
+    }
+    public static int getSofaScore(){
+        return sofaScore;
+    }
+    public static int getToksPoint(int i){
+        return toksPointList[i];
+    }
+    public static int getSofaPoint(int i){
+        return sofaPointList[i];
+    }
+    public static String getSepticShock(){
+        return Boolean.toString(septicShockScore);
     }
 }
