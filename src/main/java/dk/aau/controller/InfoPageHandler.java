@@ -1,4 +1,4 @@
-package dk.aau.model;
+package dk.aau.controller;
 
 import dk.aau.App;
 import dk.aau.biomark.ResultBiomarker;

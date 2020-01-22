@@ -25,13 +25,8 @@ public class Patient extends Person {   // gør patinet til subklasse til Person
     // inkapsulering
     public Patient(){
         // evt. nulstil her
-        //    Scanner myInput= new Scanner(System.in);
-        //    System.out.println("Indtast CPR-nummer:");
-        //    long CPRnummerHent = myInput.nextLong();
-        
-        verifyCpr(cpr);
-        
-        //    myInput.close(); // scannere skal lukkes 
+
+        verifyCpr(cpr);   
     }
     
     public static void setCprNumber(long cprNumber){
@@ -42,14 +37,11 @@ public class Patient extends Person {   // gør patinet til subklasse til Person
     Constructor for den rigtige "Patient". Denne construtor bliver kaldt
     når data tilhørende patienten hentes.
     */
-    public Patient(String FirstName, String LastName) {
-        
+    public Patient(String FirstName, String LastName) { 
         firstName = FirstName;
         lastName = LastName;
         calcAge();
-        calcGender();
-        
-        
+        calcGender();  
     }
     
     
@@ -65,7 +57,7 @@ public class Patient extends Person {   // gør patinet til subklasse til Person
             alert.showAndWait();
         } else {                                                    // Hvis længden er 10, gemmes CPRnummeret til senere metoder
             cpr=CPRnumber;                                    
-            getHealthCaredata(cpr);                                 // Henter Sundhedsdata for patienten
+            getHealthCaredata(cpr);                                // Henter Sundhedsdata for patienten
             if (firstName == null){                                 // Hvis patineten IKKE HAR et fornavn, indikerer det at ..
                 Alert alert = new Alert(AlertType.ERROR);           // .. der ikke er en person med det CPR-nummer, og der laves en fejlmeddelelse
                 alert.initOwner(dialogStage);
@@ -93,7 +85,7 @@ public class Patient extends Person {   // gør patinet til subklasse til Person
 
                 
                 App.changeStageToInfo();
-                
+                System.out.println(ResultBiomarker.biomarkerList[0]);
             }
         } 
     }
@@ -123,7 +115,8 @@ public class Patient extends Person {   // gør patinet til subklasse til Person
     private void calcAge(){
         //    App.dateForAge
         System.out.println(App.dateForAge);
-        String ageVar = String.valueOf(cpr);      
+        String ageVar = String.valueOf(cpr); 
+
         char yearOneVar = App.dateForAge.charAt(0);
         char yearTwoVar = App.dateForAge.charAt(1);
         char monthOneVar = App.dateForAge.charAt(2);
@@ -163,9 +156,14 @@ public class Patient extends Person {   // gør patinet til subklasse til Person
         } else {
             offset = 100;
         }
-        age = currentYear +offset - year;
-        if(month >= currentMonth && day >= currentYear){
-            age +=1;
+        age = currentYear + offset - year;
+        
+        if(month > currentMonth){
+            age -= 1;   
+        } else if(month == currentMonth){
+            if(day < currentDay){
+                age -= 1;
+            }
         }
         
         System.out.println("Age: " + age);

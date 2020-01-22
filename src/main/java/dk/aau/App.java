@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 
-
+import dk.aau.person.HealthCarePersonale;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,7 +18,7 @@ import javafx.stage.Stage;
 
 public class App extends Application {
     // tidshåndterings variabler 
-    public static long days = (long) 7; // antallet af dage der kigged bagud
+    public static long days = 2; // antallet af dage der kigged bagud
     public static String currentDate;
     public static String previousDate;
     public static String dateForAge;
@@ -42,6 +42,8 @@ public class App extends Application {
         dateForAge = myDateObj.format(formatForAge);
         LocalDateTime a = myDateObj.minus(days, ChronoUnit.DAYS);
         previousDate = a.format(myFormatObj);
+
+        HealthCarePersonale hcp = new HealthCarePersonale(1);
 
         // sætter brugerinterfacet op på scenen
         initRootLayout();

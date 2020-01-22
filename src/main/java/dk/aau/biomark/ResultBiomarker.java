@@ -48,8 +48,6 @@ public class ResultBiomarker {
     // Constructor for tempResultatbiomarkør. Henter data og kalder den "rigtige" biomarkør constructor
     public ResultBiomarker(){
         getBiomarkerDB();
-        biomarkerList = new double[11];        // Opretter biomarkør listen
-        
     }
     
     
@@ -83,6 +81,7 @@ public class ResultBiomarker {
         
         //------ SOFA variabler sættes ------
         paO2 = PaO2;
+        System.out.println("HER! " + paO2);
         bilirubin = Bilirubin;
         creatine = Kreatinin;
         platelets = Trombocyttal;
@@ -106,6 +105,7 @@ public class ResultBiomarker {
         biomarkerList[2] = bilirubin;
         biomarkerList[1] = systolicBloodPressure;
         biomarkerList[0] = paO2;
+        System.out.println("HER! 2 " + paO2);
         
         compareBiomarker();
 

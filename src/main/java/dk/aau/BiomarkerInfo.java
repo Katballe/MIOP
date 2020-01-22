@@ -34,6 +34,7 @@ public class BiomarkerInfo {
         ResultBiomarker biomarker = new ResultBiomarker(temperatur, saturation, pulse, sysbp, respfrek,
         gcs, pao2, bilirubin, kreatinin, platelets, laktat, temperaturTime, saturationTime, pulseTime, sysbpTime, 
         respfrekTime, gcsTime, pao2Time, bilirubinTime, kreatininTime, plateletsTime, laktatTime);
+ 
         printValue();
     }
 

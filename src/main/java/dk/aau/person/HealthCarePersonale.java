@@ -2,11 +2,11 @@ package dk.aau.person;
 
 // subklasse til Person-klassen
 public class HealthCarePersonale extends Person{  
-    private String id;
+    private int id;
     
     // constructor
-    public HealthCarePersonale() {
-        
+    public HealthCarePersonale(int id) {
+        this.id = id;
     }
 
     // metode til at skifte patient
